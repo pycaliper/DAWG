@@ -1,0 +1,37 @@
+
+## Files for DAWG
+
+
+### One click run:
+    
+1. Run `./run_all.sh`
+2. Proof results is in `dist_ssh_XXXXX` file
+3. Time results is in `time.log` in seconds
+
+
+### Manual run:
+
+#### Environment setup
+ 1. Run the script `./install_symbiyosys.sh` to grab a recent version of the OSS CAD suite.
+ 2. Run command `source oss-cad-suite/environment` setup the suite.
+ 3. Modify `dist.sby` file changing "PATH_TO" to correct path to DAWG files.
+
+
+#### Running the proofs:
+
+Execute the command (note that this requires that you replace `Path_To` strings in `dist.sby` with the correct path to the `DAWG` directory):
+
+`sby dist.sby {engine}_dist_cacheline_{policy} -f`
+
+
+where the engine is one of te following:
+
+1. `taskKIND10`: k-induction with k = 10
+2. `taskBMC12`: BMC with 12 steps (with `smtbmc` as the backend)
+3. `taskBMC20`: BMC with 20 steps (with `smtbmc` as the backend)
+4. `taskprove`: PDR using `abc` as the backend
+
+and the policy is one of the following:
+
+1. `plru`: PLRU policy
+2. `nru`: NRU policy

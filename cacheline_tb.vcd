@@ -1,0 +1,212 @@
+$date
+	Sat Mar 25 00:53:07 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module cacheline_tb $end
+$var wire 32 ! io_addr [31:0] $end
+$var wire 8 " io_hitmap [7:0] $end
+$var wire 1 # io_os_req $end
+$var wire 1 $ io_user_req $end
+$var reg 32 % CLK_CYCLE [31:0] $end
+$var reg 32 & addr [31:0] $end
+$var reg 1 ' clk $end
+$var reg 8 ( hitmap [7:0] $end
+$var reg 1 ) os_req $end
+$var reg 1 * reset $end
+$var reg 1 + user_req $end
+$scope module c $end
+$var wire 32 , addr [31:0] $end
+$var wire 1 ' clk $end
+$var wire 8 - hitmap [7:0] $end
+$var wire 1 # os_req $end
+$var wire 1 * reset $end
+$var wire 32 . tags_0 [31:0] $end
+$var wire 32 / tags_1 [31:0] $end
+$var wire 32 0 tags_2 [31:0] $end
+$var wire 32 1 tags_3 [31:0] $end
+$var wire 32 2 tags_4 [31:0] $end
+$var wire 32 3 tags_5 [31:0] $end
+$var wire 32 4 tags_6 [31:0] $end
+$var wire 32 5 tags_7 [31:0] $end
+$var wire 1 $ user_req $end
+$var reg 1 6 hit $end
+$var reg 3 7 hit_way [2:0] $end
+$var reg 8 8 metadata [7:0] $end
+$var reg 8 9 plru_mask [7:0] $end
+$var reg 8 : plru_policy [7:0] $end
+$var reg 8 ; policy_hitmap [7:0] $end
+$var reg 8 < v_plru_victim [7:0] $end
+$var reg 8 = valid [0:7] $end
+$var reg 3 > victim_way [2:0] $end
+$scope task check_hit $end
+$var reg 32 ? _addr [31:0] $end
+$upscope $end
+$scope task find_plru_victim $end
+$upscope $end
+$scope task flush_cache $end
+$upscope $end
+$scope task switch_domain $end
+$var reg 8 @ _hitmap [7:0] $end
+$upscope $end
+$scope task update_plru_tree $end
+$var reg 3 A hit_ways [2:0] $end
+$var reg 8 B plru_update [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx B
+bx A
+bx @
+bx ?
+b0 >
+b0 =
+bx <
+b0 ;
+b0 :
+b0 9
+b0 8
+b0 7
+06
+b0 5
+b0 4
+b0 3
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+bx -
+bx ,
+x+
+1*
+x)
+bx (
+1'
+bx &
+b0 %
+x$
+x#
+bx "
+bx !
+$end
+#10
+0'
+#20
+b1 %
+1'
+#30
+0'
+0*
+#40
+b10 %
+1'
+#50
+0'
+#60
+b11 %
+1'
+#70
+0'
+#80
+b100 %
+1'
+#90
+0'
+#100
+b101 %
+1'
+#110
+0'
+#120
+b110 %
+1'
+#130
+0'
+#140
+b111 %
+1'
+#150
+0'
+#160
+b1000 %
+1'
+#170
+0'
+#180
+b1001 %
+1'
+#190
+0'
+#200
+b1010 %
+1'
+#210
+0'
+#220
+b1011 %
+1'
+#230
+0'
+#240
+b1100 %
+1'
+#250
+0'
+#260
+b1101 %
+1'
+#270
+0'
+#280
+b1110 %
+1'
+#290
+0'
+#300
+b1111 %
+1'
+#310
+0'
+#320
+b10000 %
+1'
+#330
+0'
+#340
+b10001 %
+1'
+#350
+0'
+#360
+b10010 %
+1'
+#370
+0'
+#380
+b10011 %
+1'
+#390
+0'
+#400
+b10100 %
+1'
+#410
+0'
+#420
+b10101 %
+1'
+#430
+0'
+#440
+b10110 %
+1'
+#450
+0'
