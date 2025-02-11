@@ -8,7 +8,7 @@ module cacheline (
     input [`NUM_WAYS-1:0] hitmap,
     input user_req,
     input [`ADDR_WIDTH-1:0] addr,
-    output reg hit
+    output logic hit
 `ifdef INVARIANTS
     , output [`NUM_WAYS-1:0] metadata_o
     , output [`NUM_WAYS-1:0] policy_hitmap_o
@@ -17,13 +17,13 @@ module cacheline (
 `endif
 );
     
-    reg [`ADDR_WIDTH-1:0] tags [`NUM_WAYS-1:0];
-    reg [`NUM_WAYS-1:0] metadata;
+    logic [`ADDR_WIDTH-1:0] tags [`NUM_WAYS-1:0];
+    logic [`NUM_WAYS-1:0] metadata;
     assign metadata_o = metadata;
     
-    reg [`NUM_WAYS-1:0] valid;
+    logic [`NUM_WAYS-1:0] valid;
 
-    reg [`NUM_WAYS-1:0] policy_hitmap;
+    logic [`NUM_WAYS-1:0] policy_hitmap;
     assign policy_hitmap_o = policy_hitmap;
 
     // NRU policy
@@ -39,11 +39,11 @@ module cacheline (
 
 
     // identified by victim selector
-    reg [`NUM_WAYS_WIDTH-1:0] victim_way;
+    logic [`NUM_WAYS_WIDTH-1:0] victim_way;
 
     // identified by hit/miss checker
-    reg [`NUM_WAYS_WIDTH-1:0] hit_way;
-    // reg hit;
+    logic [`NUM_WAYS_WIDTH-1:0] hit_way;
+    // logic hit;
 
     wire [`ADDR_WIDTH-1:0] tags_0;
     wire [`ADDR_WIDTH-1:0] tags_1;
