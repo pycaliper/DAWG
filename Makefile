@@ -16,6 +16,9 @@ cacheline_plru_miter.btor:
 cacheline_nru_miter.btor: cacheline_nru.v miter.v
 	yosys -p "read_verilog $^; hierarchy -top miter; hierarchy -check; proc; opt; memory; flatten; opt; clk2fflogic; write_btor $@"
 
+cacheline_nru_miter_implicit_clock.btor: cacheline_nru.v miter.v
+	yosys -p "read_verilog $^; hierarchy -top miter; hierarchy -check; proc; opt; memory -nomap; chformal -assume -early; flatten; dffunmap; write_btor $@"
+
 clean:
 	rm -rf dist_taskBMC12_dist_cacheline_plru
 	rm -rf *.log
